@@ -1,0 +1,331 @@
+/* index */
+
+@import '../global/global.css';
+
+/* Header */
+
+header {
+  display: flex;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Fundo */
+
+header .fundo {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(to bottom, #1E232D, #000000);
+  background: -webkit-linear-gradient(to bottom, #1E232D, #000000);
+}
+
+header .fundo .branco {
+  position: absolute;
+  left: -10%;
+  top: -20vh;
+  transform: rotate(-20deg);
+  width: 60%;
+  height: 200vh;
+  background-color: var(--cor-branco);
+  z-index: 1;
+}
+
+header .fundo .garrafas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+  max-height: 100vh;
+  min-height: 100vh;
+  position: absolute;
+  z-index: 2;
+}
+
+header .fundo .garrafas img {
+  width: 100%;
+  max-width: 20px;
+  margin: 0 0 50px 0;
+  animation: garrafas 20s linear infinite;
+}
+
+@keyframes garrafas {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+  10% {
+    transform: translate(0, 10vh);
+    opacity: 1;
+  }
+  90% {
+    transform: translate(0, 90vh);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(0, 100vh);
+    opacity: 0;
+  }
+}
+
+header .fundo .garrafas.um {
+  top: 0;
+  left: 20px;
+}
+
+header .fundo .garrafas.dois {
+  top: 0;
+  right: 20px;
+  transform: rotate(180deg);
+}
+
+/* Título */
+
+header .titulo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 45%;
+  min-height: 100vh;
+  position: absolute;
+  padding: 200px 50px 0 50px;
+  right: 0;
+  top: 0;
+  z-index: 3;
+}
+
+header .titulo h1 {
+  font-family: var(--bold);
+  font-size: clamp(4rem, 3vw, 6rem);
+  color: var(--cor-branco);
+  width: 100%;
+  max-width: 500px;
+}
+
+header .titulo h1 span {
+  color: var(--cor-laranja);
+}
+
+header .titulo p {
+  font-family: var(--regular);
+  font-size: clamp(1rem, 3vw, 1.2rem);
+  color: var(--cor-cinza);
+  line-height: 1.5;
+  width: 100%;
+  max-width: 500px;
+  margin: 20px 0 30px 0;
+}
+
+header .titulo button {
+  font-family: var(--bold);
+  font-size: clamp(1.2rem, 3vw, 1.4rem);
+  color: var(--cor-branco);
+  background-color: transparent;
+  background-image: url('../../../files/images/fundo-botao.png');
+  background-size: cover;
+  background-position: left top;
+  line-height: 1.5;
+  padding: 20px 40px 20px 60px;
+  border-right: 30px solid var(--cor-branco);
+  transition: all 0.3s;
+}
+
+header .titulo button:hover {
+  filter: brightness(140%);
+  border-right: 3px solid var(--cor-laranja);
+}
+
+header .titulo img.mdChefe {
+  width: 100%;
+  max-width: 300px;
+  position: absolute;
+  bottom: 0;
+  right: 50px;
+  z-index: 4;
+}
+
+header .titulo img.wiskyBorrado {
+  width: 100%;
+  max-width: 70px;
+  position: absolute;
+  bottom: 50px;
+  right: 250px;
+  transform: rotate(10deg);
+  z-index: 3;
+  animation: wisky 20s linear infinite;
+}
+
+/* Imagem */
+
+header .imagem {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50%;
+}
+
+header .imagem img.mdChefe {
+  width: 100%;
+  max-width: 650px;
+  position: absolute;
+  bottom: 0;
+  left: 100px;
+  z-index: 4;
+  animation: mdChefe 20s linear infinite;
+}
+
+@keyframes mdChefe {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+header .imagem img.wisky {
+  width: 100%;
+  max-width: 200px;
+  position: absolute;
+  bottom: 100px;
+  right: 50px;
+  transform: rotate(10deg);
+  z-index: 5;
+  animation: wisky 20s linear infinite;
+}
+
+@keyframes wisky {
+  0% {
+    transform: scale(1) rotate(10deg);
+  }
+  50% {
+    transform: scale(1.2) rotate(20deg);
+  }
+  100% {
+    transform: scale(1) rotate(10deg);
+  }
+}
+
+header .imagem img.wiskyBorrado {
+  width: 100%;
+  max-width: 150px;
+  position: absolute;
+  bottom: 400px;
+  right: 250px;
+  transform: rotate(-10deg);
+  z-index: 3;
+  animation: wiskyBorrado 20s linear infinite;
+}
+
+@keyframes wiskyBorrado {
+  0% {
+    transform: scale(1) rotate(-10deg);
+  }
+  50% {
+    transform: scale(0.9) rotate(-20deg);
+  }
+  100% {
+    transform: scale(1) rotate(-10deg);
+  }
+}
+
+/* Responsivo */
+@media screen and (max-width: 1000px) {
+  
+  /* Fundo */
+
+  header .fundo {
+    background: linear-gradient(to left, #1E232D, #000000);
+    background: -webkit-linear-gradient(to left, #1E232D, #000000);
+  }
+  
+  header .fundo .branco {
+    top: auto;
+    bottom: -10vh;
+    width: 200vw;
+    height: 60vh;
+  }
+  
+  header .fundo .garrafas img {
+    max-width: 10px;
+    margin: 0 0 40px 0;
+    animation: garrafas 40s linear infinite;
+  }
+  
+  header .fundo .garrafas.um {
+    left: 10px;
+  }
+  
+  header .fundo .garrafas.dois {
+    right: 10px;
+  }
+  
+  /* Título */
+  
+  header .titulo {
+    width: 100%;
+    min-height: 50vh;
+    padding: 50px 40px 0 40px;
+    right: auto;
+    left: 0;
+    z-index: 10;
+  }
+  
+  header .titulo h1 {
+    font-size: clamp(2rem, 3vw, 3rem);
+  }
+  
+  header .titulo p {
+    font-size: clamp(0.8rem, 3vw, 1rem);
+    margin: 15px 0 20px 0;
+  }
+  
+  header .titulo button {
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    padding: 15px 30px 15px 40px;
+    border-right: 20px solid var(--cor-branco);
+  }
+  
+  header .titulo button:hover {
+    border-right: 2px solid var(--cor-laranja);
+  }
+  
+  header .titulo img.mdChefe {
+    display: none;
+  }
+  
+  header .titulo img.wiskyBorrado {
+    display: none;
+  }
+  
+  /* Imagem */
+  
+  header .imagem {
+    width: 100%;
+    max-height: 50vh;
+  }
+  
+  header .imagem img.mdChefe {
+    max-width: 400px;
+    bottom: 0;
+    left: 20px;
+  }
+  
+  header .imagem img.wisky {
+    max-width: 100px;
+    bottom: 120px;
+    right: 30px;
+  }
+  
+  header .imagem img.wiskyBorrado {
+    max-width: 100px;
+    bottom: 300px;
+    right: 100px;
+  }
+}
